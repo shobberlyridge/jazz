@@ -1,4 +1,7 @@
 from django.contrib import admin
 from jazz.models import People
 
-admin.site.register(People)
+class PeopleAdmin(admin.ModelAdmin):
+	fields = ['first_name', 'last_name']
+
+admin.site.register(People, PeopleAdmin)
