@@ -9,6 +9,7 @@ class People(models.Model):
 	first_name = models.CharField(max_length=20, blank=True, null=True)
 	birth_date = models.DateField(blank=True, null=True)
 	sex = models.CharField(max_length=1, choices=sex_choices, default='n')
+	main_instrument = models.CharField(max_length=20, blank=True, null=True)
 	
 	def __unicode__(self):              # __unicode__ on Python 2
 		return self.last_name

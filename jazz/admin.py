@@ -2,6 +2,6 @@ from django.contrib import admin
 from jazz.models import People
 
 class PeopleAdmin(admin.ModelAdmin):
-	list_display = ['last_name', 'first_name', 'sex', 'birth_date']
+	list_display = ['last_name', 'first_name', 'sex', 'birth_date', 'main_instrument']
 
 admin.site.register(People, PeopleAdmin)
