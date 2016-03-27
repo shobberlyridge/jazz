@@ -23,4 +23,16 @@ class Group(models.Model):
 		
 	class Meta:
 		verbose_name_plural = 'Groups'
-	
+		
+
+class Lineup(models.Model):
+    group_name = models.ForeignKey(Group)
+    date = models.DateField('Date', blank=True, null=True)
+    
+    def __unicode__(self):              # __unicode__ on Python 2
+        return unicode(self.group_name)
+        # return unicode(self.date)
+        
+    class Meta:
+        verbose_name_plural = 'Lineups'
+        unique_together = ('group_name', 'date')
