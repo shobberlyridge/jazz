@@ -26,7 +26,7 @@ class Group(models.Model):
 		
 
 class Lineup(models.Model):
-    group_name = models.ForeignKey(Group)
+    group_name = models.ForeignKey(Group, on_delete=models.PROTECT)
     date = models.DateField('Date', blank=True, null=True)
     
     def __unicode__(self):              # __unicode__ on Python 2
